@@ -12,11 +12,10 @@ terraform {
 }
 
 provider "google" {
-  project = "597595105496"
+  project = var.gcp_organization_id
 }
 
 provider "stackguardian" {
   org_name = var.sg_org_name
   api_key  = var.api_key
-  api_uri  = var.api_uri
 }
