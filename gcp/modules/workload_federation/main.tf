@@ -1,3 +1,15 @@
+# random string for pool id
+resource "random_string" "identity-pool-id" {
+  length  = 8
+  special = false
+  upper   = false
+}
+resource "random_string" "identity-pool-provider-id" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
 # Create Service Account
 resource "google_service_account" "sg-test-service-account" {
   account_id   = "sg-test-service-account"
@@ -6,13 +18,13 @@ resource "google_service_account" "sg-test-service-account" {
 }
 
 resource "google_iam_workload_identity_pool" "sg-pool" {
-  workload_identity_pool_id = var.workload_identity_pool_id
+  workload_identity_pool_id = "stackguardian-${random_string.identity-pool-id.result}"
   project                   = var.gcp_project_id
 }
 
 resource "google_iam_workload_identity_pool_provider" "sg-oidc-connector-provider" {
   workload_identity_pool_id          = google_iam_workload_identity_pool.sg-pool.workload_identity_pool_id
-  workload_identity_pool_provider_id = "${var.gcp_project_id}-sg-oidc"
+  workload_identity_pool_provider_id = "stackguardian-${random_string.identity-pool-provider-id.result}"
   project                            = var.gcp_project_id
   display_name                       = "SG OIDC provider"
   description                        = "OIDC identity pool provider for StackGuardian Connector"

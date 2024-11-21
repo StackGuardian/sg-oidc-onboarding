@@ -3,7 +3,7 @@ variable "gcp_organization_id" {
   type        = string
 }
 
-variable "api_key" {
+variable "sg_api_key" {
   description = "StackGuardian organization API key"
   type        = string
   sensitive   = true
@@ -11,10 +11,5 @@ variable "api_key" {
 
 variable "sg_org_name" {
   description = "StackGuardian organization name"
-  type        = string
-}
-
-variable "workload_identity_pool_id" {
-  description = "GCP identity pool name"
   type        = string
 }

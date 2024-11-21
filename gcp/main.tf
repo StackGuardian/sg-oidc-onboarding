@@ -11,8 +11,7 @@ module "workload_federation" {
     index => project
   }
 
-  sg_org                    = var.sg_org_name
-  gcp_project_id            = each.value.project_id
-  gcp_project_number        = each.value.number
-  workload_identity_pool_id = var.workload_identity_pool_id
+  sg_org             = var.sg_org_name
+  gcp_project_id     = each.value.project_id
+  gcp_project_number = each.value.number
 }
