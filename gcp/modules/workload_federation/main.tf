@@ -12,7 +12,7 @@ resource "random_string" "identity-pool-provider-id" {
 
 # Create Service Account
 resource "google_service_account" "sg-test-service-account" {
-  account_id   = "sg-test-service-account"
+  account_id   = "sg-test-service-account-2"
   display_name = "StackGuardian Service Account"
   project      = var.gcp_project_id
 }
