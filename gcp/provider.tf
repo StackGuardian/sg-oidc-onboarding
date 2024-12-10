@@ -6,7 +6,7 @@ terraform {
     }
     stackguardian = {
       source  = "stackguardian/stackguardian"
-      version = "1.1.0-rc4"
+      version = "1.1.0-rc5"
     }
 
     random = {
