@@ -6,17 +6,22 @@ terraform {
     }
     stackguardian = {
       source  = "stackguardian/stackguardian"
-      version = "1.1.0-rc2"
+      version = "1.1.0-rc4"
+    }
+
+    random = {
+      source  = "hashicorp/random"
+      version = "3.6.3"
     }
   }
 }
 
 provider "google" {
-  project = "597595105496"
+  project = var.gcp_organization_id
 }
 
 provider "stackguardian" {
   org_name = var.sg_org_name
-  api_key  = var.api_key
-  api_uri  = var.api_uri
+  api_key  = var.sg_api_key
+  api_uri  = "https://testapi.qa.stackguardian.io"
 }
