@@ -1,4 +1,4 @@
-# GCP Example to onboard cloud projects onto StackGuardian using OIDC
+# Example to onboard GCP projects via OIDC onto StackGuardian
 
 ## Pre-Requisite
 The service account used for this operation needs to be owner in a Project of the Organisation. Further the service account will need following permissions on the organizational level: 
