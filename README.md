@@ -2,8 +2,9 @@
 
 ## User Guide
 
-- Move to the appropriate cloud provider folder
-- Configure the latest version of stackguardian provider in provider.tf
-- Run `terraform init`
-- Create `terraform.tfvars` file and populate the variables from variables.tf
-- Run `terraform plan` and `terraform apply`
+This Repository provides examples to onboard whole organisations to StackGuardian. 
+
+First, the respective permissions and resources will be created in the Cloud Providers - Service Accounts(GCP), Roles (AWS), SPN(Azure). 
+Second, the permissions are tied to StackGuardian Cloud Connectors, that will allow StackGuardian to perform actions within the Cloud Project/Account/Subscription.
+
+For these purpose, follow the README.md within the respective cloud provider.
