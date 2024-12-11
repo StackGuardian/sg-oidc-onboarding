@@ -6,7 +6,7 @@ terraform {
     }
     stackguardian = {
       source  = "stackguardian/stackguardian"
-      version = "1.1.0-rc4"
+      version = "1.1.0-rc5"
     }
 
     random = {
@@ -23,5 +23,4 @@ provider "google" {
 provider "stackguardian" {
   org_name = var.sg_org_name
   api_key  = var.sg_api_key
-  api_uri  = "https://testapi.qa.stackguardian.io"
 }
