@@ -33,8 +33,8 @@ resource "google_iam_workload_identity_pool_provider" "sg-oidc-connector-provide
     "google.subject" = "assertion.sub"
   }
   oidc {
-    allowed_audiences = ["https://testapi.qa.stackguardian.io"]
-    issuer_uri        = "https://testapi.qa.stackguardian.io"
+    allowed_audiences = ["https://api.app.stackguardian.io"]
+    issuer_uri        = "https://api.app.stackguardian.io"
   }
   depends_on = [google_iam_workload_identity_pool.sg-pool]
 }
